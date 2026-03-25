@@ -11,12 +11,31 @@ function syncPath() {
   currentPath.value = window.location.pathname;
 }
 
+function syncScrollPosition() {
+  if (window.location.hash) {
+    const targetId = window.location.hash.slice(1);
+    requestAnimationFrame(() => {
+      document.getElementById(targetId)?.scrollIntoView();
+    });
+    return;
+  }
+
+  window.scrollTo(0, 0);
+}
+
 onMounted(() => {
+  if ("scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+  }
+
+  syncScrollPosition();
   window.addEventListener("popstate", syncPath);
+  window.addEventListener("popstate", syncScrollPosition);
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("popstate", syncPath);
+  window.removeEventListener("popstate", syncScrollPosition);
 });
 
 const activePage = computed(() =>
