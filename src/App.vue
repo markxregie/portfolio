@@ -1,7 +1,7 @@
 <template>
-  <LandingPage />
+  <HomePage />
 </template>
 
 <script setup>
-import LandingPage from "@/pages/landingpage.vue";
+import HomePage from "@/pages/homePage.vue";
 </script>
