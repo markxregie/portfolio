@@ -1,0 +1,313 @@
+<script setup>
+import { onBeforeUnmount, onMounted, ref } from "vue";
+
+const experiences = [
+  {
+    title: "Online Ordering System with Blockchain Integration",
+    role: "Full Stack Developer",
+    dates: "Aug 2025 - Present",
+    bullets: [
+      "Developing a transaction reporting platform featuring a real-time data visualization dashboard.",
+      "Architecting a blockchain integration module to ensure 100% data immutability and secure transaction logging.",
+      "Designing a user-friendly interface to simplify the monitoring of complex datasets.",
+    ],
+  },
+  {
+    title: "GeoSensei: AI-Driven Geography Learning Platform",
+    role: "Full Stack Developer",
+    dates: "Feb 2025 - July 2025",
+    bullets: [
+      "Built a web-based, gamified geography learning platform integrating AI-driven feedback and crowdsourced geospatial data.",
+      "Designed interactive map-based challenges to enhance user engagement and spatial reasoning skills.",
+      "Implemented data visualization features to present real-world geographic information intuitively.",
+    ],
+  },
+  {
+    title: "Second Chances - Pet Adoption System",
+    role: "Frontend Developer",
+    dates: "Oct 2024 - Jan 2025",
+    bullets: [
+      "Developed a web-based pet adoption platform to streamline adopter-pet matching and application management.",
+      "Implemented user authentication, pet listing management, and adoption request workflows.",
+      "Designed an intuitive interface to improve accessibility for shelters and prospective adopters.",
+    ],
+  },
+];
+
+const leadership = [
+  {
+    organization: "Software Research Group (SRG) - Polytechnic University of the Philippines Quezon City",
+    role: "Frontend Developer",
+    dates: "Nov 2025 - Present",
+    bullets: [
+      "Built and optimized frontend interfaces for academic and experimental software projects within a university research group.",
+      "Co-authored research paper: “A Framework for Promoting Ethical Awareness in Data Brokerage and Privacy” (PUPQC, 2025).",
+    ],
+  }
+];
+
+const publications = [
+  {
+    conference: "Nemesio Prudente International Research Conference",
+    title: "Geosensei: A Web-based Learning Platform Integrating AI And Crowdsourced Geospatial Data For Gamified Geography Education.",
+    year: "2025"
+  },
+  {
+    conference: "Polytechnic University of the Philippines Quezon City",
+    title: "A Framework for Promoting Ethical Awareness in Data Brokerage and Privacy",
+    year: "2025"
+  }
+];
+
+const certifications = [
+  {
+    category: "Security & Networking",
+    items: "IBM Computer Networks & Network Security, Cisco Introduction to Cybersecurity, Cisco Networking Basics, Saylor Principles of Information Security (2025)."
+  },
+  {
+    category: "Cloud, AI & Software",
+    items: "Oracle Cloud Infrastructure AI Foundations Associate, PUP Associate in Application Defense, mabl Quality Assurance Foundations (2025)."
+  }
+];
+
+const skills = [
+  { label: "Technical", value: "Proficient in JavaScript (React), C# (ASP.NET), and Python (FastAPI); Strong command of HTML, CSS, and SQL." },
+  { label: "Tools & Platforms", value: "Git/GitHub for version control, Figma for UI/UX design." },
+  { label: "Languages", value: "Tagalog & English." },
+  { label: "Interests", value: "Frontend Developement, Computer networking infrastructure, Web development, and Mobile Application Development." }
+];
+
+const getShortYear = (dates) => {
+  const match = dates.match(/\b20(\d{2})\b/);
+  return match ? `'${match[1]}` : "";
+};
+
+const revealRefs = ref([]);
+const visibleItems = ref({});
+let observer;
+
+function setRevealRef(el, index) {
+  if (el) {
+    revealRefs.value[index] = el;
+  }
+}
+
+onMounted(() => {
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const index = Number(entry.target.dataset.revealIndex);
+        visibleItems.value = {
+          ...visibleItems.value,
+          [index]: entry.isIntersecting,
+        };
+      });
+    },
+    {
+      threshold: 0.18,
+      rootMargin: "0px 0px -10% 0px",
+    },
+  );
+
+  revealRefs.value.forEach((el) => {
+    if (el) observer.observe(el);
+  });
+});
+
+onBeforeUnmount(() => {
+  observer?.disconnect();
+});
+</script>
+
+<template>
+  <main class="mx-auto w-full max-w-6xl space-y-24 px-6 py-16">
+    <section
+      id="education"
+      :ref="(el) => setRevealRef(el, 0)"
+      data-reveal-index="0"
+      :class="[
+        'scroll-mt-24 transition-all duration-700',
+        visibleItems[0] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
+      ]"
+    >
+      <div class="mb-14 space-y-2">
+        <h1 class="text-foreground text-4xl font-bold sm:text-5xl">
+          Education
+        </h1>
+      </div>
+
+      <div class="relative">
+        <div class="bg-border absolute bottom-0 left-8 top-0 w-px -ml-px"></div>
+        <div class="bg-foreground absolute bottom-0 left-8 h-2.5 w-2.5 -translate-x-[0.28rem] rounded-full"></div>
+        <article class="relative flex items-start gap-6 sm:gap-8">
+          <div class="bg-card text-foreground border-background relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-[6px] text-lg font-semibold shadow-sm">
+            '26
+          </div>
+
+          <div class="bg-card border-border relative mt-1 flex-1 rounded-xl border p-6 shadow-sm sm:p-8">
+            <div class="bg-card border-border absolute -left-2 top-6 h-4 w-4 rotate-45 border-b border-l"></div>
+            <div class="space-y-4">
+              <div class="text-muted-foreground text-sm font-semibold tracking-widest uppercase">
+                Quezon City Expected 2026
+              </div>
+              <div class="space-y-1">
+                <h2 class="text-foreground text-2xl font-semibold sm:text-3xl">
+                  Polytechnic University of the Philippines
+                </h2>
+                <p class="text-muted-foreground text-lg font-medium sm:text-xl">
+                  Candidate for Bachelor of Science in Information Technology
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="scroll-mt-24">
+      <div class="mb-14 space-y-2">
+        <h1 class="text-foreground text-4xl font-bold sm:text-5xl">Experience</h1>
+        
+      </div>
+
+      <div class="relative">
+        <div class="bg-border absolute bottom-0 left-8 top-0 w-px -ml-px"></div>
+        <div class="bg-foreground absolute bottom-0 left-8 h-2.5 w-2.5 -translate-x-[0.28rem] rounded-full"></div>
+        <div class="space-y-12">
+          <article
+            v-for="(experience, index) in experiences"
+            :key="experience.title"
+            :ref="(el) => setRevealRef(el, index + 1)"
+            :data-reveal-index="index + 1"
+            :class="[
+              'relative flex items-start gap-6 transition-all duration-700 sm:gap-8',
+              visibleItems[index + 1]
+                ? 'translate-y-0 opacity-100'
+                : 'translate-y-10 opacity-0',
+            ]"
+          >
+            <div class="bg-card text-foreground border-background relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-[6px] text-lg font-semibold shadow-sm">
+              {{ getShortYear(experience.dates) }}
+            </div>
+
+            <div class="bg-card border-border relative mt-1 flex-1 rounded-xl border p-6 shadow-sm sm:p-8">
+              <div class="bg-card border-border absolute -left-2 top-6 h-4 w-4 rotate-45 border-b border-l"></div>
+              <div class="space-y-4">
+                <div class="text-muted-foreground text-sm font-semibold tracking-widest uppercase">
+                  {{ experience.dates }}
+                </div>
+                <div class="space-y-1">
+                  <h2 class="text-foreground text-2xl font-semibold sm:text-3xl">
+                    {{ experience.title }}
+                  </h2>
+                  <p class="text-muted-foreground text-lg font-medium sm:text-xl">
+                    {{ experience.role }}
+                  </p>
+                </div>
+                <ul class="text-muted-foreground mt-4 space-y-3 text-base leading-relaxed sm:text-lg">
+                  <li v-for="bullet in experience.bullets" :key="bullet" class="flex gap-3">
+                    <span class="text-foreground/50 mt-1.5 text-sm">◆</span>
+                    <span>{{ bullet }}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="leadership"
+      :ref="(el) => setRevealRef(el, 4)"
+      data-reveal-index="4"
+      :class="[
+        'scroll-mt-24 transition-all duration-700',
+        visibleItems[4] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
+      ]"
+    >
+      <h2 class="text-foreground mb-8 text-3xl font-bold sm:text-4xl">Leadership & Activities</h2>
+      <div class="space-y-6">
+        <article v-for="item in leadership" :key="item.organization" class="bg-card border-border rounded-xl border p-6 shadow-sm sm:p-8">
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h3 class="text-foreground text-xl font-bold sm:text-2xl">{{ item.organization }}</h3>
+              <p class="text-muted-foreground text-lg font-medium">{{ item.role }}</p>
+            </div>
+            <span class="text-muted-foreground text-sm font-semibold tracking-widest uppercase sm:text-right">
+              {{ item.dates }}
+            </span>
+          </div>
+          <ul class="text-muted-foreground mt-6 space-y-3 text-base leading-relaxed sm:text-lg">
+            <li v-for="bullet in item.bullets" :key="bullet" class="flex gap-3">
+              <span class="text-foreground/50 mt-1.5 text-sm">◆</span>
+              <span>{{ bullet }}</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section
+      id="publications"
+      :ref="(el) => setRevealRef(el, 5)"
+      data-reveal-index="5"
+      :class="[
+        'scroll-mt-24 transition-all duration-700',
+        visibleItems[5] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
+      ]"
+    >
+      <h2 class="text-foreground mb-8 text-3xl font-bold sm:text-4xl">Research Publication</h2>
+      <div class="space-y-6">
+        <article v-for="pub in publications" :key="pub.title" class="bg-card border-border rounded-xl border p-6 shadow-sm">
+          <p class="text-muted-foreground mb-2 text-sm font-semibold tracking-widest uppercase">
+            {{ pub.conference }}
+          </p>
+          <p class="text-muted-foreground text-lg leading-snug sm:text-xl">
+            "{{ pub.title }}"
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section
+      id="skills"
+      :ref="(el) => setRevealRef(el, 6)"
+      data-reveal-index="6"
+      :class="[
+        'scroll-mt-24 transition-all duration-700',
+        visibleItems[6] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
+      ]"
+    >
+      <h2 class="text-foreground mb-8 text-3xl font-bold sm:text-4xl">Skills & Interests</h2>
+      <div class="bg-card border-border rounded-xl border p-6 shadow-sm">
+        <ul class="space-y-4 text-base sm:text-lg">
+          <li v-for="skill in skills" :key="skill.label" class="text-muted-foreground leading-relaxed">
+            <strong class="text-foreground">{{ skill.label }}:</strong> {{ skill.value }}
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section
+      id="certifications"
+      :ref="(el) => setRevealRef(el, 7)"
+      data-reveal-index="7"
+      :class="[
+        'scroll-mt-24 pb-16 transition-all duration-700',
+        visibleItems[7] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
+      ]"
+    >
+      <h2 class="text-foreground mb-8 text-3xl font-bold sm:text-4xl">Certifications</h2>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <article v-for="cert in certifications" :key="cert.category" class="bg-card border-border rounded-xl border p-6 shadow-sm">
+          <h3 class="text-foreground mb-3 text-xl font-bold">{{ cert.category }}</h3>
+          <p class="text-muted-foreground text-base leading-relaxed sm:text-lg">
+            {{ cert.items }}
+          </p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+</template>

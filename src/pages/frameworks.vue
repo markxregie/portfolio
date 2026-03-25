@@ -1,4 +1,7 @@
 <script setup>
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+import { useScrollReveal } from "@/composables/useScrollReveal";
+
 const technologies = [
   { name: "JavaScript", slug: "javascript" },
   { name: "TypeScript", slug: "typescript" },
@@ -18,19 +21,47 @@ const technologies = [
   { name: "CSS", slug: "css" },
 ];
 
+const isDark = ref(false);
+let observer;
+const { setRevealRef, visibleItems } = useScrollReveal();
+
+const iconColor = computed(() => (isDark.value ? "F2F0EF" : "000000"));
+
 function iconUrl(slug) {
-  return `https://cdn.simpleicons.org/${slug}/000000`;
+  return `https://cdn.simpleicons.org/${slug}/${iconColor.value}`;
 }
+
+onMounted(() => {
+  const updateTheme = () => {
+    isDark.value = document.documentElement.classList.contains("dark");
+  };
+
+  updateTheme();
+  observer = new MutationObserver(updateTheme);
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+});
+
+onBeforeUnmount(() => {
+  observer?.disconnect();
+});
 </script>
 
 <template>
   <section
-    class="mx-auto flex min-h-[92vh] w-full max-w-6xl flex-col items-center justify-center px-6 py-28"
+    :ref="(el) => setRevealRef(el, 0)"
+    data-reveal-index="0"
+    :class="[
+      'mx-auto flex min-h-[92vh] w-full max-w-6xl flex-col items-center justify-center px-6 py-28 transition-all duration-700',
+      visibleItems[0] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
+    ]"
     aria-labelledby="frameworks-title"
   >
     <h2
       id="frameworks-title"
-      class="mb-8 text-center text-3xl font-bold text-black sm:text-4xl"
+      class="text-foreground mb-8 text-center text-3xl font-bold sm:text-4xl"
     >
       Frameworks & Tools
     </h2>
@@ -49,7 +80,7 @@ function iconUrl(slug) {
           :alt="technology.name"
           class="h-10 w-10"
         />
-        <span class="text-sm font-semibold text-black">
+        <span class="text-foreground text-sm font-semibold">
           {{ technology.name }}
         </span>
       </div>

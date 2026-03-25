@@ -3,9 +3,9 @@ import { onMounted, ref } from "vue";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
+  { label: "Home", href: "/" },
+  { label: "Projects", href: "/projects" },
+  { label: "Experience", href: "/experience" },
 ];
 
 const isDark = ref(false);
@@ -17,6 +17,25 @@ function applyTheme(value) {
 function toggleTheme() {
   isDark.value = !isDark.value;
   applyTheme(isDark.value);
+}
+
+function handleNavigate(event, href) {
+  if (!href.startsWith("/")) {
+    return;
+  }
+
+  event.preventDefault();
+  window.history.pushState({}, "", href);
+  window.dispatchEvent(new PopStateEvent("popstate"));
+
+  const hash = href.split("#")[1];
+  if (hash) {
+    requestAnimationFrame(() => {
+      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+    });
+  } else {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 }
 
 onMounted(() => {
@@ -41,6 +60,7 @@ onMounted(() => {
           :href="item.href"
           variant="ghost"
           class="rounded-full px-5 text-base"
+          @click="handleNavigate($event, item.href)"
         >
           {{ item.label }}
         </Button>

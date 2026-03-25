@@ -1,38 +1,69 @@
 <script setup>
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+import { useScrollReveal } from "@/composables/useScrollReveal";
+
 const username = "markxregie";
-const contributionChart = `https://ghchart.rshah.org/000000/${username}`;
 const profileUrl = `https://github.com/${username}`;
+const isDark = ref(false);
+let observer;
+const { setRevealRef, visibleItems } = useScrollReveal();
+
+const contributionChart = computed(
+  () => `https://ghchart.rshah.org/000000/${username}`,
+);
+
+onMounted(() => {
+  const updateTheme = () => {
+    isDark.value = document.documentElement.classList.contains("dark");
+  };
+
+  updateTheme();
+  observer = new MutationObserver(updateTheme);
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+});
+
+onBeforeUnmount(() => {
+  observer?.disconnect();
+});
 </script>
 
 <template>
   <section
     id="contributions"
-    class="mx-auto flex min-h-[72vh] w-full max-w-6xl flex-col items-center justify-center px-6 py-20 text-center"
+    :ref="(el) => setRevealRef(el, 0)"
+    data-reveal-index="0"
+    :class="[
+      'mx-auto -mt-16 flex min-h-[48vh] w-full max-w-6xl flex-col items-center justify-center px-6 pt-2 pb-0 text-center transition-all duration-700',
+      visibleItems[0] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
+    ]"
     aria-labelledby="contributions-title"
   >
     <div class="w-full space-y-8">
       <div class="space-y-3">
         <h2
           id="contributions-title"
-          class="text-4xl font-bold text-black sm:text-5xl"
+          class="text-foreground text-4xl font-bold sm:text-5xl"
         >
           GitHub Contributions
         </h2>
-        <p class="mx-auto max-w-2xl text-lg text-black/70 sm:text-xl">
-          A snapshot of my contribution activity on GitHub.
-        </p>
       </div>
 
       <a
         :href="profileUrl"
         target="_blank"
         rel="noreferrer"
-        class="block overflow-hidden rounded-3xl bg-[#F2F0EF] p-4"
+        class="bg-card block overflow-hidden rounded-3xl border border-border p-4"
       >
         <img
           :src="contributionChart"
           :alt="`${username} GitHub contribution graph`"
-          class="mx-auto w-full max-w-5xl"
+          :class="[
+            'mx-auto w-full max-w-5xl transition',
+            isDark ? 'invert' : '',
+          ]"
         />
       </a>
     </div>
