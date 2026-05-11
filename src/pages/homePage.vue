@@ -3,7 +3,7 @@ import Footer from "@/components/footer.vue";
 import AboutMe from "@/pages/aboutMe.vue";
 import Frameworks from "@/pages/frameworks.vue";
 import LandingPage from "@/pages/landingPage.vue";
-import ProjectSummary from "@/pages/projectSummary.vue";
+
 </script>
 
 <template>

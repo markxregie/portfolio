@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Online Ordering System with Blockchain Integration",
+    "role": "Full Stack Developer",
+    "dates": "Aug 2025 - Present",
+    "bullets": [
+      "Developing a transaction reporting platform featuring a real-time data visualization dashboard.",
+      "Architecting a blockchain integration module to ensure 100% data immutability and secure transaction logging.",
+      "Designing an intuitive user-friendly interface to simplify the monitoring of complex datasets."
+    ],
+    "image": "https://via.placeholder.com/480x320?text=Temp+Project+Image+1",
+    "description": "Temporary description: A blockchain-enabled ordering system with real-time analytics, secure transaction logging, and responsive interface design.",
+    "github": "https://github.com/markxregie/OOS-2",
+    "liveDemo": "https://bleu-oos-rouge.vercel.app/"
+  },
+  {
+    "title": "GeoSensei: AI-Driven Geography Learning Platform",
+    "role": "Full Stack Developer",
+    "dates": "Feb 2025 - July 2025",
+    "bullets": [
+      "Built a web-based, gamified geography learning platform integrating AI-driven feedback and crowdsourced geospatial data.",
+      "Designed interactive map-based challenges to enhance user engagement and spatial reasoning skills.",
+      "Implemented data visualization features to present real-world geographic information intuitively."
+    ],
+    "image": "https://via.placeholder.com/480x320?text=Temp+Project+Image+2",
+    "description": "Temporary description: An AI-driven geography platform with gamified experiences, adaptive feedback, and immersive map-based challenges.",
+    "github": "https://github.com/your-username/geosensei",
+    "liveDemo": "https://geo-sensei.vercel.app/"
+  },
+  {
+    "title": "Second Chances - Pet Adoption System",
+    "role": "Frontend Developer",
+    "dates": "Oct 2024 - Jan 2025",
+    "bullets": [
+      "Developed a web-based pet adoption platform to streamline adopter-pet matching and application management.",
+      "Implemented user authentication, pet listing management, and adoption request workflows.",
+      "Designed an intuitive interface to improve accessibility for shelters and prospective adopters."
+    ],
+    "image": "https://via.placeholder.com/480x320?text=Temp+Project+Image+3",
+    "description": "Temporary description: A pet adoption system with easy application flows, accessible shelter management, and responsive user experiences.",
+    "github": "https://github.com/your-username/second-chances-pet-adoption",
+    "liveDemo": "https://example.com/second-chances-pet-adoption"
+  }
+]

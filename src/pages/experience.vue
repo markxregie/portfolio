@@ -1,38 +1,6 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref } from "vue";
-
-const experiences = [
-  {
-    title: "Online Ordering System with Blockchain Integration",
-    role: "Full Stack Developer",
-    dates: "Aug 2025 - Present",
-    bullets: [
-      "Developing a transaction reporting platform featuring a real-time data visualization dashboard.",
-      "Architecting a blockchain integration module to ensure 100% data immutability and secure transaction logging.",
-      "Designing a user-friendly interface to simplify the monitoring of complex datasets.",
-    ],
-  },
-  {
-    title: "GeoSensei: AI-Driven Geography Learning Platform",
-    role: "Full Stack Developer",
-    dates: "Feb 2025 - July 2025",
-    bullets: [
-      "Built a web-based, gamified geography learning platform integrating AI-driven feedback and crowdsourced geospatial data.",
-      "Designed interactive map-based challenges to enhance user engagement and spatial reasoning skills.",
-      "Implemented data visualization features to present real-world geographic information intuitively.",
-    ],
-  },
-  {
-    title: "Second Chances - Pet Adoption System",
-    role: "Frontend Developer",
-    dates: "Oct 2024 - Jan 2025",
-    bullets: [
-      "Developed a web-based pet adoption platform to streamline adopter-pet matching and application management.",
-      "Implemented user authentication, pet listing management, and adoption request workflows.",
-      "Designed an intuitive interface to improve accessibility for shelters and prospective adopters.",
-    ],
-  },
-];
+import experiences from "../data/project.json";
 
 const leadership = [
   {
@@ -161,13 +129,67 @@ onBeforeUnmount(() => {
             </div>
           </div>
         </article>
+
+      </div>
+    </section>
+
+    <section
+      id="work-experience"
+      :ref="(el) => setRevealRef(el, 1)"
+      data-reveal-index="1"
+      :class="[
+        'scroll-mt-24 transition-all duration-700',
+        visibleItems[1] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
+      ]"
+    >
+      <div class="mb-14 space-y-2">
+        <h1 class="text-foreground text-4xl font-bold sm:text-5xl">Work Experience</h1>
+      </div>
+
+      <div class="relative">
+        <div class="bg-border absolute bottom-0 left-8 top-0 w-px -ml-px"></div>
+        <div class="bg-foreground absolute bottom-0 left-8 h-2.5 w-2.5 -translate-x-[0.28rem] rounded-full"></div>
+        <article class="relative flex items-start gap-6 sm:gap-8">
+          <div class="bg-card text-foreground border-background relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-[6px] text-lg font-semibold shadow-sm">
+            '26
+          </div>
+
+          <div class="bg-card border-border relative mt-1 flex-1 rounded-xl border p-6 shadow-sm sm:p-8">
+            <div class="bg-card border-border absolute -left-2 top-6 h-4 w-4 rotate-45 border-b border-l"></div>
+            <div class="space-y-4">
+              <div class="text-muted-foreground text-sm font-semibold tracking-widest uppercase">
+                Feb 2026 – May 2026
+              </div>
+              <div class="space-y-1">
+                <h2 class="text-foreground text-2xl font-semibold sm:text-3xl">
+                  Frontend Developer Intern
+                </h2>
+              </div>
+              <ul class="text-muted-foreground mt-4 space-y-3 text-base leading-relaxed sm:text-lg">
+                <li class="flex gap-3">
+                  <span class="text-foreground/50 mt-1.5 text-sm">◆</span>
+                  <span>Built reusable React components that improved development efficiency across multiple features while translating complex UI/UX wireframes into responsive, cross-browser-compatible web interfaces optimized for both desktop and mobile environments.</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="text-foreground/50 mt-1.5 text-sm">◆</span>
+                  <span>Collaborated in an agile development environment to build and deploy frontend features, contributing to efficient team workflows and consistent delivery of high-quality user-facing applications.</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="text-foreground/50 mt-1.5 text-sm">◆</span>
+                  <span>OEstablished project architecture and Git repository standards for internal applications, ensuring version control best practices, scalable development processes, and long-term clean code maintainability.</span>
+                </li>
+               
+              </ul>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
     <section id="experience" class="scroll-mt-24">
       <div class="mb-14 space-y-2">
-        <h1 class="text-foreground text-4xl font-bold sm:text-5xl">Experience</h1>
-        
+        <h1 class="text-foreground text-4xl font-bold sm:text-5xl">Projects & Experience</h1>
+
       </div>
 
       <div class="relative">
@@ -177,11 +199,11 @@ onBeforeUnmount(() => {
           <article
             v-for="(experience, index) in experiences"
             :key="experience.title"
-            :ref="(el) => setRevealRef(el, index + 1)"
-            :data-reveal-index="index + 1"
+            :ref="(el) => setRevealRef(el, index + 2)"
+            :data-reveal-index="index + 2"
             :class="[
               'relative flex items-start gap-6 transition-all duration-700 sm:gap-8',
-              visibleItems[index + 1]
+              visibleItems[index + 2]
                 ? 'translate-y-0 opacity-100'
                 : 'translate-y-10 opacity-0',
             ]"
@@ -204,6 +226,7 @@ onBeforeUnmount(() => {
                     {{ experience.role }}
                   </p>
                 </div>
+
                 <ul class="text-muted-foreground mt-4 space-y-3 text-base leading-relaxed sm:text-lg">
                   <li v-for="bullet in experience.bullets" :key="bullet" class="flex gap-3">
                     <span class="text-foreground/50 mt-1.5 text-sm">◆</span>
@@ -219,11 +242,11 @@ onBeforeUnmount(() => {
 
     <section
       id="leadership"
-      :ref="(el) => setRevealRef(el, 4)"
-      data-reveal-index="4"
+      :ref="(el) => setRevealRef(el, 5)"
+      data-reveal-index="5"
       :class="[
         'scroll-mt-24 transition-all duration-700',
-        visibleItems[4] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
+        visibleItems[5] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
       ]"
     >
       <h2 class="text-foreground mb-8 text-3xl font-bold sm:text-4xl">Leadership & Activities</h2>
@@ -250,11 +273,11 @@ onBeforeUnmount(() => {
 
     <section
       id="publications"
-      :ref="(el) => setRevealRef(el, 5)"
-      data-reveal-index="5"
+      :ref="(el) => setRevealRef(el, 6)"
+      data-reveal-index="6"
       :class="[
         'scroll-mt-24 transition-all duration-700',
-        visibleItems[5] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
+        visibleItems[6] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
       ]"
     >
       <h2 class="text-foreground mb-8 text-3xl font-bold sm:text-4xl">Research Publication</h2>
@@ -272,11 +295,11 @@ onBeforeUnmount(() => {
 
     <section
       id="skills"
-      :ref="(el) => setRevealRef(el, 6)"
-      data-reveal-index="6"
+      :ref="(el) => setRevealRef(el, 7)"
+      data-reveal-index="7"
       :class="[
         'scroll-mt-24 transition-all duration-700',
-        visibleItems[6] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
+        visibleItems[7] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
       ]"
     >
       <h2 class="text-foreground mb-8 text-3xl font-bold sm:text-4xl">Skills & Interests</h2>
@@ -291,11 +314,11 @@ onBeforeUnmount(() => {
 
     <section
       id="certifications"
-      :ref="(el) => setRevealRef(el, 7)"
-      data-reveal-index="7"
+      :ref="(el) => setRevealRef(el, 8)"
+      data-reveal-index="8"
       :class="[
         'scroll-mt-24 pb-16 transition-all duration-700',
-        visibleItems[7] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
+        visibleItems[8] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
       ]"
     >
       <h2 class="text-foreground mb-8 text-3xl font-bold sm:text-4xl">Certifications</h2>

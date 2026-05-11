@@ -12,13 +12,15 @@ const technologies = [
   { name: "Figma", slug: "figma" },
   { name: "Tailwind", slug: "tailwindcss" },
   { name: "Python", slug: "python" },
-  { name: "C#", slug: "csharp" },
+  { name: "GitHub", slug: "github" },
   { name: ".NET", slug: "dotnet" },
   { name: "FastAPI", slug: "fastapi" },
   { name: "Django", slug: "django" },
   { name: "Bootstrap", slug: "bootstrap" },
   { name: "HTML", slug: "html5" },
   { name: "CSS", slug: "css" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Docker", slug: "docker" },
 ];
 
 const isDark = ref(false);
@@ -73,7 +75,7 @@ onBeforeUnmount(() => {
       <div
         v-for="technology in technologies"
         :key="technology.slug"
-        class="bg-background flex min-w-[110px] shrink-0 flex-col items-center justify-center gap-3 rounded-2xl px-4 py-5 text-center"
+        class="bg-background flex min-w-[108px] shrink-0 flex-col items-center justify-center gap-3 rounded-2xl px-4 py-5 text-center"
       >
         <img
           :src="iconUrl(technology.slug)"
