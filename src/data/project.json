@@ -29,6 +29,11 @@
       "faithhopelove/f1.png"
     ],
     "description": "Led the frontend modernization of existing web pages, resulting in faster performance and a smoother user experience. Collaborated directly with the development team to troubleshoot issues, validate system fixes, and deploy user-facing enhancements. Identified, documented, and tracked software bugs to continuously improve overall system quality.",
+    "techStack": [
+      "React.js",
+      "Tailwind",
+      "MUI"
+    ],
     "github": "https://github.com/Software-Research-Group-SRG/faith-hope-love",
     "liveDemo": "https://web.faithhopeloveclinic.com/"
   },
@@ -48,6 +53,12 @@
       "bleubean/b1.png"
     ],
     "description": "Engineered the frontend architecture using React.js to create a seamless, responsive user experience for an online ordering platform. Developing a transaction reporting platform featuring a real-time data visualization dashboard. Designing a user-friendly interface to simplify the monitoring of complex datasets.",
+    "techStack": [
+      "React.js",
+      "MSSQL",
+      "FastAPI",
+      "Bootstrap"
+    ],
     "github": "https://github.com/markxregie/OOS-2",
     "liveDemo": "https://bleu-oos-rouge.vercel.app/"
   },
@@ -67,6 +78,12 @@
       "geosensei/g4.png"
     ],
     "description": "Co-authored the research paper detailing the platform's development, which was accepted and presented at the 3rd Nemesio Prudente International Research Conference. Built a web-based, gamified geography learning platform integrating AI-driven feedback and crowdsourced geospatial data. Implemented crowdsourced geospatial data and Mapillary street-level imagery to create interactive, real-world mapping challenges.",
+    "techStack": [
+      "React.js",
+      "PostgreSQL",
+      "Node.js",
+      "Vue"
+    ],
     "github": "https://github.com/markxregie/GeoSensei-2.0",
     "liveDemo": "https://geo-sensei.vercel.app/"
   },
@@ -86,6 +103,11 @@
       "secondchances/s2.png"
     ],
     "description": "Developed a web-based pet adoption platform to streamline adopter-pet matching and application management. Implemented user authentication, pet listing management, and adoption request workflows. Designed an intuitive interface to improve accessibility for shelters and prospective adopters.",
+    "techStack": [
+      "ASP.NET",
+      "Bootstrap",
+      "MSSQL"
+    ],
     "github": "https://github.com/markxregie/Second-Chances",
     "liveDemo": "/project-unavailable"
   }

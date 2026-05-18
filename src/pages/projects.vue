@@ -42,20 +42,45 @@ function resolveProjectImage(image) {
             class="grid gap-2 lg:grid-cols-[0.48fr_1fr]"
           >
             <div class="grid gap-2">
-              <img
+              <div
                 v-for="image in project.images.slice(0, 2)"
                 :key="image"
-                :src="resolveProjectImage(image)"
-                :alt="project.title || 'Project preview'"
-                class="h-52 w-full rounded-2xl object-cover sm:h-64 lg:h-52"
-              />
+                class="group overflow-hidden rounded-2xl shadow-xl shadow-black/20 transition duration-500 ease-out hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/25"
+              >
+                <img
+                  :src="resolveProjectImage(image)"
+                  :alt="project.title || 'Project preview'"
+                  class="h-52 w-full object-cover transition duration-500 ease-out group-hover:scale-[1.02] sm:h-64 lg:h-52"
+                />
+              </div>
             </div>
 
-            <img
-              :src="resolveProjectImage(project.images[2])"
-              :alt="project.title || 'Project preview'"
-              class="h-72 w-full rounded-2xl object-cover sm:h-[33rem] lg:h-[26.5rem]"
-            />
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl shadow-black/25">
+              <img
+                :src="resolveProjectImage(project.images[2])"
+                :alt="project.title || 'Project preview'"
+                class="h-72 w-full object-cover transition duration-500 ease-out group-hover:scale-[1.02] sm:h-[33rem] lg:h-[26.5rem]"
+              />
+
+              <div
+                v-if="project.techStack?.length"
+                class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-black/35 to-transparent p-6 text-white opacity-100 transition duration-500 ease-out group-hover:pointer-events-none group-hover:translate-y-4 group-hover:opacity-0"
+              >
+                <div>
+                  <h3 class="text-xl font-semibold leading-tight sm:text-2xl">
+                    {{ project.title }}
+                  </h3>
+                  <div class="mt-2 flex flex-wrap gap-x-2 gap-y-1 text-sm font-medium text-white/85 sm:text-base">
+                    <span
+                      v-for="(tech, techIndex) in project.techStack"
+                      :key="tech"
+                    >
+                      {{ tech }}<span v-if="techIndex < project.techStack.length - 1">,</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div
@@ -67,7 +92,7 @@ function resolveProjectImage(image) {
               :key="image"
               :src="resolveProjectImage(image)"
               :alt="project.title || 'Project preview'"
-              class="h-60 w-full rounded-2xl object-cover"
+              class="h-60 w-full rounded-2xl object-cover shadow-xl shadow-black/20"
             />
           </div>
 
@@ -75,7 +100,7 @@ function resolveProjectImage(image) {
             <img
               :src="resolveProjectImage(project.image)"
               :alt="project.title || 'Project preview'"
-              class="h-72 w-full rounded-2xl object-cover"
+              class="h-72 w-full rounded-2xl object-cover shadow-xl shadow-black/20"
             />
           </div>
         </div>

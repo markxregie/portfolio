@@ -45,6 +45,12 @@ const skills = [
   { label: "Interests", value: "Frontend Developement, Computer networking infrastructure, Web development, and Mobile Application Development." }
 ];
 
+const projectRevealStart = 2;
+const leadershipRevealIndex = projectRevealStart + experiences.length;
+const publicationsRevealIndex = leadershipRevealIndex + 1;
+const skillsRevealIndex = publicationsRevealIndex + 1;
+const certificationsRevealIndex = skillsRevealIndex + 1;
+
 const getShortYear = (dates) => {
   const match = dates.match(/\b20(\d{2})\b/);
   return match ? `'${match[1]}` : "";
@@ -199,11 +205,11 @@ onBeforeUnmount(() => {
           <article
             v-for="(experience, index) in experiences"
             :key="experience.title"
-            :ref="(el) => setRevealRef(el, index + 2)"
-            :data-reveal-index="index + 2"
+            :ref="(el) => setRevealRef(el, index + projectRevealStart)"
+            :data-reveal-index="index + projectRevealStart"
             :class="[
               'relative flex items-start gap-6 transition-all duration-700 sm:gap-8',
-              visibleItems[index + 2]
+              visibleItems[index + projectRevealStart]
                 ? 'translate-y-0 opacity-100'
                 : 'translate-y-10 opacity-0',
             ]"
@@ -242,11 +248,11 @@ onBeforeUnmount(() => {
 
     <section
       id="leadership"
-      :ref="(el) => setRevealRef(el, 5)"
-      data-reveal-index="5"
+      :ref="(el) => setRevealRef(el, leadershipRevealIndex)"
+      :data-reveal-index="leadershipRevealIndex"
       :class="[
         'scroll-mt-24 transition-all duration-700',
-        visibleItems[5] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
+        visibleItems[leadershipRevealIndex] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
       ]"
     >
       <h2 class="text-foreground mb-8 text-3xl font-bold sm:text-4xl">Leadership & Activities</h2>
@@ -273,11 +279,11 @@ onBeforeUnmount(() => {
 
     <section
       id="publications"
-      :ref="(el) => setRevealRef(el, 6)"
-      data-reveal-index="6"
+      :ref="(el) => setRevealRef(el, publicationsRevealIndex)"
+      :data-reveal-index="publicationsRevealIndex"
       :class="[
         'scroll-mt-24 transition-all duration-700',
-        visibleItems[6] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
+        visibleItems[publicationsRevealIndex] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
       ]"
     >
       <h2 class="text-foreground mb-8 text-3xl font-bold sm:text-4xl">Research Publication</h2>
@@ -295,11 +301,11 @@ onBeforeUnmount(() => {
 
     <section
       id="skills"
-      :ref="(el) => setRevealRef(el, 7)"
-      data-reveal-index="7"
+      :ref="(el) => setRevealRef(el, skillsRevealIndex)"
+      :data-reveal-index="skillsRevealIndex"
       :class="[
         'scroll-mt-24 transition-all duration-700',
-        visibleItems[7] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
+        visibleItems[skillsRevealIndex] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
       ]"
     >
       <h2 class="text-foreground mb-8 text-3xl font-bold sm:text-4xl">Skills & Interests</h2>
@@ -314,11 +320,11 @@ onBeforeUnmount(() => {
 
     <section
       id="certifications"
-      :ref="(el) => setRevealRef(el, 8)"
-      data-reveal-index="8"
+      :ref="(el) => setRevealRef(el, certificationsRevealIndex)"
+      :data-reveal-index="certificationsRevealIndex"
       :class="[
         'scroll-mt-24 pb-16 transition-all duration-700',
-        visibleItems[8] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
+        visibleItems[certificationsRevealIndex] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
       ]"
     >
       <h2 class="text-foreground mb-8 text-3xl font-bold sm:text-4xl">Certifications</h2>
