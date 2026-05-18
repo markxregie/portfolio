@@ -4,6 +4,7 @@ import Navbar from "@/components/navbar.vue";
 import ExperienceMainPage from "@/pages/experienceMainPage.vue";
 import HomePage from "@/pages/homePage.vue";
 import ProjectMainPage from "@/pages/projectMainPage.vue";
+import ProjectUnavailable from "@/pages/projectUnavailable.vue";
 
 const currentPath = ref(window.location.pathname);
 
@@ -41,6 +42,8 @@ onBeforeUnmount(() => {
 const activePage = computed(() =>
   currentPath.value === "/projects"
     ? ProjectMainPage
+    : currentPath.value === "/project-unavailable"
+      ? ProjectUnavailable
     : currentPath.value === "/experience"
       ? ExperienceMainPage
       : HomePage,

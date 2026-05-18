@@ -1,15 +1,53 @@
 [
   {
-    "title": "Online Ordering System with Blockchain Integration",
+    "title": "PUP Smart Track",
+    "role": "Frontend Developer",
+    "dates": "",
+    "bullets": [
+      "Collaborated with a cross-functional team to design and develop responsive, intuitive user interfaces.",
+      "Engineered a library of reusable frontend components to accelerate development cycles and maintain code consistency.",
+      "Optimized the frontend architecture to ensure a seamless and efficient user experience for inventory."
+    ],
+    "image": "https://via.placeholder.com/480x320?text=PUP+Smart+Track",
+    "description": "Collaborated with a cross-functional team to design and develop responsive, intuitive user interfaces. Engineered a library of reusable frontend components to accelerate development cycles and maintain code consistency. Optimized the frontend architecture to ensure a seamless and efficient user experience for inventory.",
+    "github": "https://github.com/Software-Research-Group-SRG/pup-inventory",
+    "liveDemo": "https://pup.inventory.gfmic.ph/login"
+  },
+  {
+    "title": "Faith Hope Love Website Enhancement",
+    "role": "Frontend Developer",
+    "dates": "",
+    "bullets": [
+      "Led the frontend modernization of existing web pages, resulting in faster performance and a smoother user experience.",
+      "Collaborated directly with the development team to troubleshoot issues, validate system fixes, and deploy user-facing enhancements.",
+      "Identified, documented, and tracked software bugs to continuously improve overall system quality."
+    ],
+    "image": "faithhopelove/f1.png",
+    "images": [
+      "faithhopelove/f2.png",
+      "faithhopelove/f3.png",
+      "faithhopelove/f1.png"
+    ],
+    "description": "Led the frontend modernization of existing web pages, resulting in faster performance and a smoother user experience. Collaborated directly with the development team to troubleshoot issues, validate system fixes, and deploy user-facing enhancements. Identified, documented, and tracked software bugs to continuously improve overall system quality.",
+    "github": "https://github.com/Software-Research-Group-SRG/faith-hope-love",
+    "liveDemo": "https://web.faithhopeloveclinic.com/"
+  },
+  {
+    "title": "Bleu Bean Online Ordering System",
     "role": "Full Stack Developer",
     "dates": "Aug 2025 - Present",
     "bullets": [
+      "Engineered the frontend architecture using React.js to create a seamless, responsive user experience for an online ordering platform.",
       "Developing a transaction reporting platform featuring a real-time data visualization dashboard.",
-      "Architecting a blockchain integration module to ensure 100% data immutability and secure transaction logging.",
-      "Designing an intuitive user-friendly interface to simplify the monitoring of complex datasets."
+      "Designing a user-friendly interface to simplify the monitoring of complex datasets."
     ],
-    "image": "https://via.placeholder.com/480x320?text=Temp+Project+Image+1",
-    "description": "Temporary description: A blockchain-enabled ordering system with real-time analytics, secure transaction logging, and responsive interface design.",
+    "image": "bleubean/b1.png",
+    "images": [
+      "bleubean/b2.png",
+      "bleubean/b3.png",
+      "bleubean/b1.png"
+    ],
+    "description": "Engineered the frontend architecture using React.js to create a seamless, responsive user experience for an online ordering platform. Developing a transaction reporting platform featuring a real-time data visualization dashboard. Designing a user-friendly interface to simplify the monitoring of complex datasets.",
     "github": "https://github.com/markxregie/OOS-2",
     "liveDemo": "https://bleu-oos-rouge.vercel.app/"
   },
@@ -18,13 +56,18 @@
     "role": "Full Stack Developer",
     "dates": "Feb 2025 - July 2025",
     "bullets": [
+      "Co-authored the research paper detailing the platform's development, which was accepted and presented at the 3rd Nemesio Prudente International Research Conference.",
       "Built a web-based, gamified geography learning platform integrating AI-driven feedback and crowdsourced geospatial data.",
-      "Designed interactive map-based challenges to enhance user engagement and spatial reasoning skills.",
-      "Implemented data visualization features to present real-world geographic information intuitively."
+      "Implemented crowdsourced geospatial data and Mapillary street-level imagery to create interactive, real-world mapping challenges."
     ],
-    "image": "https://via.placeholder.com/480x320?text=Temp+Project+Image+2",
-    "description": "Temporary description: An AI-driven geography platform with gamified experiences, adaptive feedback, and immersive map-based challenges.",
-    "github": "https://github.com/your-username/geosensei",
+    "image": "geosensei/g1.png",
+    "images": [
+      "geosensei/g1.png",
+      "geosensei/g3.png",
+      "geosensei/g4.png"
+    ],
+    "description": "Co-authored the research paper detailing the platform's development, which was accepted and presented at the 3rd Nemesio Prudente International Research Conference. Built a web-based, gamified geography learning platform integrating AI-driven feedback and crowdsourced geospatial data. Implemented crowdsourced geospatial data and Mapillary street-level imagery to create interactive, real-world mapping challenges.",
+    "github": "https://github.com/markxregie/GeoSensei-2.0",
     "liveDemo": "https://geo-sensei.vercel.app/"
   },
   {
@@ -36,9 +79,14 @@
       "Implemented user authentication, pet listing management, and adoption request workflows.",
       "Designed an intuitive interface to improve accessibility for shelters and prospective adopters."
     ],
-    "image": "https://via.placeholder.com/480x320?text=Temp+Project+Image+3",
-    "description": "Temporary description: A pet adoption system with easy application flows, accessible shelter management, and responsive user experiences.",
-    "github": "https://github.com/your-username/second-chances-pet-adoption",
-    "liveDemo": "https://example.com/second-chances-pet-adoption"
+    "image": "secondchances/s1.png",
+    "images": [
+      "secondchances/s1.png",
+      "secondchances/s3.png",
+      "secondchances/s2.png"
+    ],
+    "description": "Developed a web-based pet adoption platform to streamline adopter-pet matching and application management. Implemented user authentication, pet listing management, and adoption request workflows. Designed an intuitive interface to improve accessibility for shelters and prospective adopters.",
+    "github": "https://github.com/markxregie/Second-Chances",
+    "liveDemo": "/project-unavailable"
   }
 ]
