@@ -1,0 +1,150 @@
+[
+  {
+    "title": "PUP Smart Track",
+    "role": "Frontend Developer",
+    "dates": "2026",
+    "bullets": [
+      "Collaborated with a cross-functional team to design and develop responsive, intuitive user interfaces.",
+      "Engineered a library of reusable frontend components to accelerate development cycles and maintain code consistency.",
+      "Optimized the frontend architecture to ensure a seamless and efficient user experience for inventory."
+    ],
+    "image": "pupsmarttrack/p1.png",
+    "images": [
+      "pupsmarttrack/p1.png",
+      "pupsmarttrack/p3.png",
+      "pupsmarttrack/p2.png"
+    ],
+    "description": "Collaborated with a cross-functional team to design and develop responsive, intuitive user interfaces. Engineered a library of reusable frontend components to accelerate development cycles and maintain code consistency. Optimized the frontend architecture to ensure a seamless and efficient user experience for inventory.",
+    "techStack": [
+      "React.js",
+      "PostgreSQL",
+      "Django"
+    ],
+    "github": "https://github.com/Software-Research-Group-SRG/pup-inventory",
+    "liveDemo": "https://pup.inventory.gfmic.ph/login"
+  },
+  {
+    "title": "Faith Hope Love Website Enhancement",
+    "role": "Frontend Developer",
+    "dates": "2026",
+    "bullets": [
+      "Led the frontend modernization of existing web pages, resulting in faster performance and a smoother user experience.",
+      "Collaborated directly with the development team to troubleshoot issues, validate system fixes, and deploy user-facing enhancements.",
+      "Identified, documented, and tracked software bugs to continuously improve overall system quality."
+    ],
+    "image": "faithhopelove/f1.png",
+    "images": [
+      "faithhopelove/f2.png",
+      "faithhopelove/f3.png",
+      "faithhopelove/f1.png"
+    ],
+    "description": "Led the frontend modernization of existing web pages, resulting in faster performance and a smoother user experience. Collaborated directly with the development team to troubleshoot issues, validate system fixes, and deploy user-facing enhancements. Identified, documented, and tracked software bugs to continuously improve overall system quality.",
+    "techStack": [
+      "React.js",
+      "Tailwind",
+      "MUI"
+    ],
+    "github": "https://github.com/Software-Research-Group-SRG/faith-hope-love",
+    "liveDemo": "https://web.faithhopeloveclinic.com/"
+  },
+  {
+    "title": "YoEtz AI Interview",
+    "role": "Frontend Developer",
+    "dates": "2026",
+    "bullets": [
+      "Led the frontend development by transforming static design prototypes into a fully responsive, high-performance web application.",
+      "Architected scalable, reusable UI components for a consistent and maintainable interview platform experience.",
+      "Engineered the complex Interview POV interface, optimizing state management and real-time interactions for a seamless AI-driven user experience."
+    ],
+    "image": "yo-etz/y1.png",
+    "images": [
+      "yo-etz/y1.png",
+      "yo-etz/y2.png",
+      "yo-etz/y3.png"
+    ],
+    "description": "Led the frontend development for the Yoetz AI Interview platform by transforming static design prototypes into a fully responsive, high-performance web application. Architected scalable, reusable UI components and engineered the complex Interview POV interface, optimizing state management and real-time interactions to deliver a seamless, AI-driven user experience.",
+    "techStack": [
+      "Next.js",
+      "TypeScript",
+      "Django",
+      "PostgreSQL",
+      "Meta-Llama-3-8B-Instruct LLM"
+    ],
+    "github": "https://github.com/Software-Research-Group-SRG/Yo-Etz",
+    "liveDemo": "/project-unavailable"
+  },
+  {
+    "title": "Bleu Bean Online Ordering System",
+    "role": "Full Stack Developer",
+    "dates": "Aug 2025 - Present",
+    "bullets": [
+      "Engineered the frontend architecture using React.js to create a seamless, responsive user experience for an online ordering platform.",
+      "Developing a transaction reporting platform featuring a real-time data visualization dashboard.",
+      "Designing a user-friendly interface to simplify the monitoring of complex datasets."
+    ],
+    "image": "bleubean/b1.png",
+    "images": [
+      "bleubean/b2.png",
+      "bleubean/b3.png",
+      "bleubean/b1.png"
+    ],
+    "description": "Engineered the frontend architecture using React.js to create a seamless, responsive user experience for an online ordering platform. Developing a transaction reporting platform featuring a real-time data visualization dashboard. Designing a user-friendly interface to simplify the monitoring of complex datasets.",
+    "techStack": [
+      "React.js",
+      "MSSQL",
+      "FastAPI",
+      "Bootstrap"
+    ],
+    "github": "https://github.com/markxregie/OOS-2",
+    "liveDemo": "https://bleu-oos-rouge.vercel.app/"
+  },
+  {
+    "title": "GeoSensei: AI-Driven Geography Learning Platform",
+    "role": "Full Stack Developer",
+    "dates": "Feb 2025 - July 2025",
+    "bullets": [
+      "Co-authored the research paper detailing the platform's development, which was accepted and presented at the 3rd Nemesio Prudente International Research Conference.",
+      "Built a web-based, gamified geography learning platform integrating AI-driven feedback and crowdsourced geospatial data.",
+      "Implemented crowdsourced geospatial data and Mapillary street-level imagery to create interactive, real-world mapping challenges."
+    ],
+    "image": "geosensei/g1.png",
+    "images": [
+      "geosensei/g1.png",
+      "geosensei/g3.png",
+      "geosensei/g4.png"
+    ],
+    "description": "Co-authored the research paper detailing the platform's development, which was accepted and presented at the 3rd Nemesio Prudente International Research Conference. Built a web-based, gamified geography learning platform integrating AI-driven feedback and crowdsourced geospatial data. Implemented crowdsourced geospatial data and Mapillary street-level imagery to create interactive, real-world mapping challenges.",
+    "techStack": [
+      "React.js",
+      "PostgreSQL",
+      "Node.js",
+      "Vue"
+    ],
+    "github": "https://github.com/markxregie/GeoSensei-2.0",
+    "liveDemo": "https://geo-sensei.vercel.app/"
+  },
+  {
+    "title": "Second Chances - Pet Adoption System",
+    "role": "Frontend Developer",
+    "dates": "Oct 2024 - Jan 2025",
+    "bullets": [
+      "Developed a web-based pet adoption platform to streamline adopter-pet matching and application management.",
+      "Implemented user authentication, pet listing management, and adoption request workflows.",
+      "Designed an intuitive interface to improve accessibility for shelters and prospective adopters."
+    ],
+    "image": "secondchances/s1.png",
+    "images": [
+      "secondchances/s1.png",
+      "secondchances/s3.png",
+      "secondchances/s2.png"
+    ],
+    "description": "Developed a web-based pet adoption platform to streamline adopter-pet matching and application management. Implemented user authentication, pet listing management, and adoption request workflows. Designed an intuitive interface to improve accessibility for shelters and prospective adopters.",
+    "techStack": [
+      "ASP.NET",
+      "Bootstrap",
+      "MSSQL"
+    ],
+    "github": "https://github.com/markxregie/Second-Chances",
+    "liveDemo": "/project-unavailable"
+  }
+]

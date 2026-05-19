@@ -1,48 +1,26 @@
 <script setup>
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { useScrollReveal } from "@/composables/useScrollReveal";
+
+const { setRevealRef, visibleItems } = useScrollReveal();
 </script>
 
 <template>
-  <main class="bg-background text-foreground min-h-screen">
-    <section class="mx-auto flex min-h-screen w-full max-w-5xl flex-col justify-center gap-8 px-6 py-16">
-      <div class="space-y-4">
-        <p class="text-muted-foreground text-sm font-medium tracking-[0.2em] uppercase">
-          Vue + Vite + shadcn-vue
-        </p>
-        <h1 class="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
-          Your project is now ready for shadcn-vue components.
-        </h1>
-        <p class="text-muted-foreground max-w-2xl text-base sm:text-lg">
-          Start replacing custom UI one section at a time with generated components from the shadcn-vue registry.
-        </p>
-      </div>
-
-      <div class="flex flex-wrap gap-3">
-        <Button>Primary Action</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="outline">Outline</Button>
-      </div>
-
-      <Card class="max-w-xl">
-        <CardHeader>
-          <CardTitle>Next commands</CardTitle>
-          <CardDescription>
-            Add more components as you build:
-          </CardDescription>
-        </CardHeader>
-        <CardContent class="space-y-2 font-mono text-sm">
-          <p>npx shadcn-vue@latest add input</p>
-          <p>npx shadcn-vue@latest add dialog</p>
-          <p>npx shadcn-vue@latest add form</p>
-        </CardContent>
-      </Card>
-    </section>
-  </main>
+  <section
+    id="home"
+    :ref="(el) => setRevealRef(el, 0)"
+    data-reveal-index="0"
+    :class="[
+      'mx-auto flex min-h-[calc(90vh-72px)] w-full max-w-5xl -translate-y-6 flex-col items-center justify-center px-6 text-center transition-all duration-700',
+      visibleItems[0] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
+    ]"
+  >
+    <div class="space-y-3">
+      <p class="font-sans text-2xl text-foreground sm:text-3xl">
+        Hello, my name is
+      </p>
+      <h1 class="font-sans text-7xl font-bold tracking-tight text-foreground sm:text-8xl md:text-[9rem]">
+        Regie
+      </h1>
+    </div>
+  </section>
 </template>
