@@ -1,4 +1,6 @@
 <script setup>
+import runnerImage from "@/assets/error/waiting.png";
+
 function goToProjects() {
   window.history.pushState({}, "", "/projects");
   window.dispatchEvent(new PopStateEvent("popstate"));
@@ -8,6 +10,11 @@ function goToProjects() {
 <template>
   <main class="flex min-h-[calc(100vh-5rem)] items-center justify-center px-6 py-20">
     <section class="mx-auto max-w-xl text-center">
+      <img
+        :src="runnerImage"
+        alt="Project unavailable illustration"
+        class="mx-auto mb-8 h-auto w-48 sm:w-64"
+      />
       <p class="text-muted-foreground text-sm font-medium uppercase tracking-[0.2em]">
         Project unavailable
       </p>
