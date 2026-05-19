@@ -2,21 +2,31 @@
   {
     "title": "PUP Smart Track",
     "role": "Frontend Developer",
-    "dates": "",
+    "dates": "2026",
     "bullets": [
       "Collaborated with a cross-functional team to design and develop responsive, intuitive user interfaces.",
       "Engineered a library of reusable frontend components to accelerate development cycles and maintain code consistency.",
       "Optimized the frontend architecture to ensure a seamless and efficient user experience for inventory."
     ],
-    "image": "https://via.placeholder.com/480x320?text=PUP+Smart+Track",
+    "image": "pupsmarttrack/p1.png",
+    "images": [
+      "pupsmarttrack/p1.png",
+      "pupsmarttrack/p3.png",
+      "pupsmarttrack/p2.png"
+    ],
     "description": "Collaborated with a cross-functional team to design and develop responsive, intuitive user interfaces. Engineered a library of reusable frontend components to accelerate development cycles and maintain code consistency. Optimized the frontend architecture to ensure a seamless and efficient user experience for inventory.",
+    "techStack": [
+      "React.js",
+      "PostgreSQL",
+      "Django"
+    ],
     "github": "https://github.com/Software-Research-Group-SRG/pup-inventory",
     "liveDemo": "https://pup.inventory.gfmic.ph/login"
   },
   {
     "title": "Faith Hope Love Website Enhancement",
     "role": "Frontend Developer",
-    "dates": "",
+    "dates": "2026",
     "bullets": [
       "Led the frontend modernization of existing web pages, resulting in faster performance and a smoother user experience.",
       "Collaborated directly with the development team to troubleshoot issues, validate system fixes, and deploy user-facing enhancements.",
@@ -36,6 +46,32 @@
     ],
     "github": "https://github.com/Software-Research-Group-SRG/faith-hope-love",
     "liveDemo": "https://web.faithhopeloveclinic.com/"
+  },
+  {
+    "title": "YoEtz AI Interview",
+    "role": "Frontend Developer",
+    "dates": "2026",
+    "bullets": [
+      "Led the frontend development by transforming static design prototypes into a fully responsive, high-performance web application.",
+      "Architected scalable, reusable UI components for a consistent and maintainable interview platform experience.",
+      "Engineered the complex Interview POV interface, optimizing state management and real-time interactions for a seamless AI-driven user experience."
+    ],
+    "image": "yo-etz/y1.png",
+    "images": [
+      "yo-etz/y1.png",
+      "yo-etz/y2.png",
+      "yo-etz/y3.png"
+    ],
+    "description": "Led the frontend development for the Yoetz AI Interview platform by transforming static design prototypes into a fully responsive, high-performance web application. Architected scalable, reusable UI components and engineered the complex Interview POV interface, optimizing state management and real-time interactions to deliver a seamless, AI-driven user experience.",
+    "techStack": [
+      "Next.js",
+      "TypeScript",
+      "Django",
+      "PostgreSQL",
+      "Meta-Llama-3-8B-Instruct LLM"
+    ],
+    "github": "https://github.com/Software-Research-Group-SRG/Yo-Etz",
+    "liveDemo": "/project-unavailable"
   },
   {
     "title": "Bleu Bean Online Ordering System",

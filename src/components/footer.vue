@@ -8,22 +8,22 @@ const socialLinks = [
 <template>
   <footer class="w-full bg-background/95">
     <div
-      class="mx-auto flex w-full max-w-6xl items-start justify-between gap-6 px-6 py-8"
+      class="mx-auto flex w-full max-w-6xl items-start justify-between gap-3 px-4 py-8 sm:gap-6 sm:px-6"
     >
-      <div class="flex items-center pt-8">
-        <p class="text-muted-foreground text-base sm:text-lg">
+      <div class="flex items-center pt-7 sm:pt-8">
+        <p class="text-muted-foreground text-sm sm:text-lg">
           Frontend Developer
         </p>
       </div>
 
       <div class="flex flex-col items-start">
-        <h2 class="text-foreground text-base font-semibold sm:text-lg">Socials</h2>
-        <div class="mt-2 flex flex-row items-center gap-6">
+        <h2 class="text-foreground text-sm font-semibold sm:text-lg">Socials</h2>
+        <div class="mt-2 flex flex-row items-center gap-3 sm:gap-6">
           <a
             v-for="link in socialLinks"
             :key="link.label"
             :href="link.href"
-            class="text-muted-foreground hover:text-foreground text-base transition-colors sm:text-lg"
+            class="text-muted-foreground hover:text-foreground text-sm transition-colors sm:text-lg"
           >
             {{ link.label }}
           </a>

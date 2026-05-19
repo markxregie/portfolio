@@ -23,7 +23,7 @@ const { setRevealRef, visibleItems } = useScrollReveal();
 
       <div class="space-y-4">
         <h2 class="mb-8 text-center text-3xl font-bold text-foreground sm:text-4xl">About Me</h2>
-        <p class="text-muted-foreground mx-auto max-w-4xl text-xl leading-9 sm:text-2xl sm:leading-10">
+        <p class="text-muted-foreground mx-auto max-w-4xl text-sm leading-6 sm:text-2xl sm:leading-10">
           I am a passionate developer who enjoys building clean, thoughtful, and
           user-friendly web experiences. I love turning ideas into simple,
           polished interfaces and continuously improving my craft through real

@@ -36,16 +36,16 @@ onBeforeUnmount(() => {
     :ref="(el) => setRevealRef(el, 0)"
     data-reveal-index="0"
     :class="[
-      'mx-auto -mt-16 flex min-h-[48vh] w-full max-w-6xl flex-col items-center justify-center px-6 pt-2 pb-0 text-center transition-all duration-700',
+      'mx-auto flex w-full max-w-6xl flex-col items-center justify-center px-2 pt-8 pb-2 text-center transition-all duration-700 sm:-mt-16 sm:min-h-[48vh] sm:px-6 sm:pt-2 sm:pb-0',
       visibleItems[0] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0',
     ]"
     aria-labelledby="contributions-title"
   >
-    <div class="w-full space-y-8">
+    <div class="w-full space-y-6 sm:space-y-8">
       <div class="space-y-3">
         <h2
           id="contributions-title"
-          class="text-foreground text-4xl font-bold sm:text-5xl"
+          class="text-foreground whitespace-nowrap text-2xl font-bold sm:text-5xl"
         >
           GitHub Contributions
         </h2>
@@ -55,7 +55,7 @@ onBeforeUnmount(() => {
         :href="profileUrl"
         target="_blank"
         rel="noreferrer"
-        class="bg-card block overflow-hidden rounded-3xl border border-border p-4"
+        class="bg-card block overflow-hidden rounded-3xl border border-border p-2 sm:p-4"
       >
         <img
           :src="contributionChart"

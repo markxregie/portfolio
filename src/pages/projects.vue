@@ -7,7 +7,7 @@ const { setRevealRef, visibleItems } = useScrollReveal({ threshold: 0.22 });
 
 const projectImages = Object.fromEntries(
   Object.entries(
-    import.meta.glob("../assets/{bleubean,faithhopelove,geosensei,secondchances}/*", {
+    import.meta.glob("../assets/{bleubean,faithhopelove,geosensei,pupsmarttrack,secondchances,yo-etz}/*", {
       eager: true,
       import: "default",
       query: "?url",
@@ -23,9 +23,9 @@ function resolveProjectImage(image) {
 <template>
   <section
     id="project-gallery"
-    class="mx-auto w-full max-w-6xl scroll-mt-24 px-6 pt-4 pb-16"
+    class="mx-auto w-full max-w-6xl scroll-mt-24 px-4 pt-8 pb-16 sm:px-6 sm:pt-4"
   >
-    <div class="space-y-24">
+    <div class="space-y-12 sm:space-y-20">
       <article
         v-for="(project, index) in projects"
         :key="project.title"
@@ -39,7 +39,7 @@ function resolveProjectImage(image) {
         <div class="grid gap-6 lg:grid-cols-[1fr]">
           <div
             v-if="project.images?.length >= 3"
-            class="grid gap-2 lg:grid-cols-[0.48fr_1fr]"
+            class="grid grid-cols-[0.48fr_1fr] gap-2"
           >
             <div class="grid gap-2">
               <div
@@ -50,7 +50,7 @@ function resolveProjectImage(image) {
                 <img
                   :src="resolveProjectImage(image)"
                   :alt="project.title || 'Project preview'"
-                  class="h-52 w-full object-cover transition duration-500 ease-out group-hover:scale-[1.02] sm:h-64 lg:h-52"
+                  class="h-20 w-full object-cover transition duration-500 ease-out group-hover:scale-[1.02] sm:h-64 lg:h-52"
                 />
               </div>
             </div>
@@ -59,18 +59,18 @@ function resolveProjectImage(image) {
               <img
                 :src="resolveProjectImage(project.images[2])"
                 :alt="project.title || 'Project preview'"
-                class="h-72 w-full object-cover transition duration-500 ease-out group-hover:scale-[1.02] sm:h-[33rem] lg:h-[26.5rem]"
+                class="h-[10.5rem] w-full object-cover transition duration-500 ease-out group-hover:scale-[1.02] sm:h-[33rem] lg:h-[26.5rem]"
               />
 
               <div
                 v-if="project.techStack?.length"
-                class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-black/35 to-transparent p-6 text-white opacity-100 transition duration-500 ease-out group-hover:pointer-events-none group-hover:translate-y-4 group-hover:opacity-0"
+                class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-black/35 to-transparent p-3 text-white opacity-100 transition duration-500 ease-out group-hover:pointer-events-none group-hover:translate-y-4 group-hover:opacity-0 sm:p-6"
               >
                 <div>
-                  <h3 class="text-xl font-semibold leading-tight sm:text-2xl">
+                  <h3 class="text-sm font-semibold leading-tight sm:text-2xl">
                     {{ project.title }}
                   </h3>
-                  <div class="mt-2 flex flex-wrap gap-x-2 gap-y-1 text-sm font-medium text-white/85 sm:text-base">
+                  <div class="mt-1 flex flex-wrap gap-x-1.5 gap-y-0.5 text-[0.65rem] font-medium leading-tight text-white/85 sm:mt-2 sm:gap-x-2 sm:gap-y-1 sm:text-base">
                     <span
                       v-for="(tech, techIndex) in project.techStack"
                       :key="tech"
@@ -105,8 +105,8 @@ function resolveProjectImage(image) {
           </div>
         </div>
 
-        <div class="mt-10 max-w-3xl space-y-5">
-          <p class="text-muted-foreground text-lg leading-9 sm:text-xl">
+        <div class="mt-6 max-w-3xl space-y-4 sm:mt-10 sm:space-y-5">
+          <p class="text-muted-foreground text-sm leading-6 sm:text-xl sm:leading-9">
             {{ project.description }}
           </p>
 
