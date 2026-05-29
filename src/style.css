@@ -68,6 +68,8 @@
   --chart-4: color-mix(in srgb, var(--black) 34%, var(--white));
   --chart-5: color-mix(in srgb, var(--black) 18%, var(--white));
   --radius: 0.625rem;
+  --skeleton: color-mix(in srgb, var(--black) 8%, var(--white));
+  --skeleton-highlight: color-mix(in srgb, var(--black) 14%, var(--white));
   color-scheme: light;
 }
 
@@ -96,6 +98,8 @@
   --chart-3: color-mix(in srgb, var(--white) 60%, var(--black));
   --chart-4: color-mix(in srgb, var(--white) 38%, var(--black));
   --chart-5: color-mix(in srgb, var(--white) 22%, var(--black));
+  --skeleton: color-mix(in srgb, var(--white) 10%, var(--black));
+  --skeleton-highlight: color-mix(in srgb, var(--white) 18%, var(--black));
   color-scheme: dark;
 }
 
@@ -133,4 +137,48 @@
   #app {
     @apply min-h-screen;
   }
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-pulse {
+  background: linear-gradient(
+    90deg,
+    var(--skeleton) 25%,
+    var(--skeleton-highlight) 37%,
+    var(--skeleton) 63%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation-name: fadeIn;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in {
+  --tw-enter-opacity: 0;
+}
+
+.page-enter-active {
+  animation: fadeIn 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
